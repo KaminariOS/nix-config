@@ -13,13 +13,20 @@
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
+
+  services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.opengl.enable = true;
+
+  # Optionally, you may need to select the appropriate driver version for your specific GPU.
+  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
+
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/29c62d3e-e2e8-4cc2-98fb-140d544e26c5";
+    { device = "/dev/disk/by-uuid/f052ef65-3fc0-467b-96b1-b9e3d1257469";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/31D8-7C59";
+    { device = "/dev/disk/by-uuid/3BC1-5BFD";
       fsType = "vfat";
     };
 
@@ -34,13 +41,4 @@
   # networking.interfaces.wlp4s0.useDHCP = lib.mkDefault true;
 
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
-
-  # NVIDIA drivers are unfree.
-  nixpkgs.config.allowUnfree = true;
-
-  services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.opengl.enable = true;
-
-  # Optionally, you may need to select the appropriate driver version for your specific GPU.
-  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
 }

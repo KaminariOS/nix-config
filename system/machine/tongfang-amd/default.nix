@@ -6,57 +6,22 @@
     ./hardware-configuration.nix
   ];
 
-  boot = {
-    kernelPackages = pkgs.linuxPackages_latest;
+  nixpkgs.config.allowUnfree = true;
 
-    # Use the systemd-boot EFI boot loader.
-    loader.systemd-boot.enable = true;
-    loader.efi.canTouchEfiVariables = true;
+  # Use the systemd-boot EFI boot loader.
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
-    initrd.kernelModules = [ "amdgpu" ];
-  };
+  # networking.hostName = "nixos"; # Define your hostname.
+  # Pick only one of the below networking options.
+  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  networking.networkmanager.enable = true;
+  # Enable the X11 windowing system.
+  services.xserver.enable = true;
 
-  networking = {
-    hostName = "tongfang-amd";
-    interfaces = {
-      eno1.useDHCP = true;
-      wlp1s0.useDHCP = true;
-    };
-  };
 
-  fileSystems."/data" = {
-    device = "/dev/nvme0n1p3";
-    fsType = "ext4";
-  };
-
-  services.xserver = {
-    videoDrivers = [ "amdgpu" ];
-
-    xrandrHeads = [
-      { output = "HDMI-A-0";
-        primary = true;
-        monitorConfig = ''
-          Modeline "3840x2160_30.00"  338.75  3840 4080 4488 5136  2160 2163 2168 2200 -hsync +vsync
-          Option "PreferredMode" "3840x2160_30.00"
-          Option "Position" "0 0"
-        '';
-      }
-      { output = "eDP";
-        primary = false;
-        monitorConfig = ''
-          Option "PreferredMode" "1920x1080"
-          Option "Position" "0 0"
-        '';
-      }
-    ];
-
-    resolutions = [
-      { x = 2048; y = 1152; }
-      { x = 1920; y = 1080; }
-      { x = 2560; y = 1440; }
-      { x = 3072; y = 1728; }
-      { x = 3840; y = 2160; }
-    ];
-  };
+  # Enable the Plasma 5 Desktop Environment.
+  services.xserver.displayManager.sddm.enable = true;
+  services.xserver.desktopManager.plasma5.enable = true;
 
 }
