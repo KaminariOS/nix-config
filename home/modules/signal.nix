@@ -29,7 +29,7 @@ let
   jsonType = types.attrsOf types.anything;
 in
 {
-  meta.maintainers = [ hm.maintainers.gvolpe ];
+  meta.maintainers = [ hm.maintainers.kaminari ];
 
   options.programs.signal = {
     enable = mkEnableOption "Privacy-focused messaging client";

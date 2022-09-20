@@ -117,13 +117,13 @@
       "locked": {
         "lastModified": 1640180970,
         "narHash": "sha256-9uuM5fwWl98uDrTHet4MdVpRZYLIQfW0HOfTxGb2o5o=",
-        "owner": "gvolpe",
+        "owner": "kaminari",
         "repo": "theme-bobthefish",
         "rev": "e4418e8a7de9fbd6b5053a9b9009aa84a48398cd",
         "type": "github"
       },
       "original": {
-        "owner": "gvolpe",
+        "owner": "kaminari",
         "repo": "theme-bobthefish",
         "type": "github"
       }
@@ -429,13 +429,13 @@
       "locked": {
         "lastModified": 1662977396,
         "narHash": "sha256-hetjDYqP6apwcRd1f5DGvL1RWlVRq0wUDICfIFCmvFw=",
-        "owner": "gvolpe",
+        "owner": "kaminari",
         "repo": "neovim-flake",
         "rev": "05db1b23f5ae0dfce1d297fb9e3076036da5d616",
         "type": "github"
       },
       "original": {
-        "owner": "gvolpe",
+        "owner": "kaminari",
         "repo": "neovim-flake",
         "type": "github"
       }
@@ -990,13 +990,13 @@
       "locked": {
         "lastModified": 1641291049,
         "narHash": "sha256-lUj+6DGyCvWyu/fIz15saQoIWkG/w6HAmjCG7VmVOvk=",
-        "owner": "gvolpe",
+        "owner": "kaminari",
         "repo": "vim-scala",
         "rev": "7379894b48df6b677788a75b8f04632e717102a8",
         "type": "github"
       },
       "original": {
-        "owner": "gvolpe",
+        "owner": "kaminari",
         "repo": "vim-scala",
         "type": "github"
       }

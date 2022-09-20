@@ -48,8 +48,8 @@ let
   );
 in
 {
-  gvolpe-edp = mkHome { hidpi = false; };
-  gvolpe-hdmi = mkHome { hidpi = true; };
+  kaminari-edp = mkHome { hidpi = false; };
+  kaminari-hdmi = mkHome { hidpi = true; };
 
   # Continuos Integration automation
   ci = {

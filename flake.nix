@@ -1,5 +1,5 @@
 {
-  description = "gvolpe's Home Manager & NixOS configurations";
+  description = "kaminari's Home Manager & NixOS configurations";
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
@@ -17,8 +17,8 @@
     };
 
     neovim-flake = {
-      #url = git+file:///home/gvolpe/workspace/neovim-flake;
-      url = github:gvolpe/neovim-flake;
+      #url = git+file:///home/kaminari/workspace/neovim-flake;
+      url = github:kaminari/neovim-flake;
       # neovim-flake pushes its binaries to the cache using its own nixpkgs version
       # if we instead use ours, we'd be rebuilding all plugins from scratch
       #inputs.nixpkgs.follows = "nixpkgs";
@@ -27,7 +27,7 @@
     # Fish shell
 
     fish-bobthefish-theme = {
-      url = github:gvolpe/theme-bobthefish;
+      url = github:kaminari/theme-bobthefish;
       flake = false;
     };
 

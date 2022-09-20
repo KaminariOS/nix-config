@@ -20,7 +20,7 @@ in
         accessToken = token;
         deviceId = "CFGDLUSSMK";
         homeServer = "https://matrix-client.matrix.org:443";
-        userId = "@@gvolpe:matrix.org";
+        userId = "@@kaminari:matrix.org";
       };
 
       sidebar = {
